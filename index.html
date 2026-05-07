@@ -23,13 +23,13 @@
   /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-    background: rgba(255,248,251,0.96); backdrop-filter: blur(12px);
-    border-bottom: 1px solid #f5c0d8;
+    background: var(--pink); backdrop-filter: blur(12px);
+    border-bottom: none;
     display: flex; justify-content: space-between; align-items: center;
     padding: 0 48px; height: 66px;
   }
   .nav-brand { display: flex; align-items: center; gap: 12px; }
-  .nav-logo { height: 48px; width: 48px; border-radius: 50%; object-fit: cover; }
+  .nav-logo { height: 48px; width: 48px; object-fit: cover; }
   .nav-name {
     font-family: 'Playfair Display', serif; font-size: 20px;
     font-style: italic; color: var(--pink-dk);
@@ -38,11 +38,11 @@
   .nav-links { display: flex; gap: 26px; align-items: center; }
   .nav-links a {
     font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-    text-decoration: none; color: var(--muted); transition: color .2s;
+    text-decoration: none; color: rgba(255,255,255,0.85); transition: color .2s;
   }
-  .nav-links a:hover { color: var(--pink); }
+  .nav-links a:hover { color: white; }
   .nav-cta {
-    background: var(--pink) !important; color: white !important;
+    background: white !important; color: var(--pink) !important;
     padding: 8px 20px; border-radius: 30px;
   }
 
