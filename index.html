@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boutique Luz de Luisa — Catálogo 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --pink:    #e8357a;
+    --pink-lt: #fde8f0;
+    --pink-dk: #9b1a4a;
+    --hot:     #ff4d8d;
+    --cream:   #fff8fb;
+    --muted:   #c47a9a;
+    --text:    #2d1020;
+    --gold:    #e8c060;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--cream); color: var(--text); font-family: 'Nunito', sans-serif; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    background: rgba(255,248,251,0.96); backdrop-filter: blur(12px);
+    border-bottom: 1px solid #f5c0d8;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 48px; height: 66px;
+  }
+  .nav-brand { display: flex; align-items: center; gap: 12px; }
+  .nav-icon {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--hot), var(--pink-dk));
+    display: flex; align-items: center; justify-content: center; font-size: 20px;
+  }
+  .nav-name {
+    font-family: 'Playfair Display', serif; font-size: 20px;
+    font-style: italic; color: var(--pink-dk);
+  }
+  .nav-name b { font-style: normal; color: var(--pink); }
+  .nav-links { display: flex; gap: 26px; align-items: center; }
+  .nav-links a {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    text-decoration: none; color: var(--muted); transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--pink); }
+  .nav-cta {
+    background: var(--pink) !important; color: white !important;
+    padding: 8px 20px; border-radius: 30px;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh; display: grid; grid-template-columns: 1.1fr 0.9fr;
+    padding-top: 66px;
+  }
+  .hero-left {
+    background: linear-gradient(150deg, #fce0ec 0%, #fde8f0 70%, #fff4f8 100%);
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 72px 64px; position: relative; overflow: hidden;
+  }
+  .deco { position: absolute; border-radius: 50%; pointer-events: none; }
+  .d1 { width: 340px; height: 340px; background: rgba(232,53,122,0.06); top: -110px; right: -110px; }
+  .d2 { width: 200px; height: 200px; background: rgba(232,53,122,0.07); bottom: -60px; left: -60px; }
+  .d3 { width: 110px; height: 110px; border: 1.5px solid rgba(232,53,122,0.2); top: 130px; right: 70px; animation: spin 22s linear infinite; }
+  .d4 { width: 60px; height: 60px; border: 1px solid rgba(232,53,122,0.15); bottom: 100px; right: 30px; animation: spin 14s linear infinite reverse; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: white; border: 1px solid #f5c0d8; border-radius: 30px;
+    padding: 6px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--pink);
+    margin-bottom: 24px; width: fit-content; position: relative; z-index: 1;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 4vw, 58px); line-height: 1.1;
+    color: var(--pink-dk); margin-bottom: 10px; position: relative; z-index: 1;
+  }
+  .hero-title em { font-style: italic; color: var(--pink); display: block; }
+  .hero-slogan {
+    font-size: 15px; font-weight: 600; color: var(--muted);
+    margin-bottom: 36px; line-height: 1.6; position: relative; z-index: 1;
+  }
+  .hero-slogan b { color: var(--pink); }
+  .hero-btns { display: flex; gap: 14px; position: relative; z-index: 1; flex-wrap: wrap; }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--hot), var(--pink-dk)); color: white;
+    font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 14px 30px; border-radius: 40px; text-decoration: none;
+    box-shadow: 0 4px 22px rgba(232,53,122,0.32); transition: transform .2s, box-shadow .2s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(232,53,122,0.42); }
+  .btn-outline {
+    border: 2px solid var(--pink); color: var(--pink);
+    font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 12px 28px; border-radius: 40px; text-decoration: none; transition: all .2s;
+  }
+  .btn-outline:hover { background: var(--pink); color: white; }
+
+  .hero-stats { display: flex; gap: 32px; margin-top: 44px; position: relative; z-index: 1; }
+  .hs-num { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--pink); }
+  .hs-label { font-size: 10px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+
+  .hero-right { background: #f5c8dc; display: grid; grid-template-rows: 1fr 1fr; }
+  .hero-card {
+    display: flex; flex-direction: column; justify-content: flex-end; padding: 24px;
+    position: relative; overflow: hidden; border-bottom: 1px solid rgba(255,255,255,0.35);
+  }
+  .hero-card:last-child { background: #edafc8; border-bottom: none; }
+  .hc-badge {
+    position: absolute; top: 16px; left: 16px;
+    background: white; color: var(--pink-dk);
+    font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 4px 14px; border-radius: 20px;
+  }
+  .hc-emoji { position: absolute; right: 20px; bottom: 16px; font-size: 64px; opacity: 0.13; }
+  .hc-name { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--pink-dk); margin-bottom: 4px; }
+  .hc-sub { font-size: 13px; font-weight: 600; color: var(--muted); }
+
+  /* STRIP */
+  .strip {
+    background: linear-gradient(135deg, var(--hot), var(--pink-dk));
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 0;
+    padding: 0;
+  }
+  .strip-item {
+    display: flex; align-items: center; gap: 8px; padding: 15px 32px;
+    color: white; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    border-right: 1px solid rgba(255,255,255,0.15);
+  }
+  .strip-item:last-child { border-right: none; }
+
+  /* SECTION HEADER */
+  .sh { text-align: center; padding: 72px 48px 44px; }
+  .sh-eye { font-size: 11px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pink); margin-bottom: 12px; }
+  .sh-title { font-family: 'Playfair Display', serif; font-size: 36px; color: var(--pink-dk); margin-bottom: 14px; }
+  .sh-title em { font-style: italic; }
+  .sh-rule { width: 48px; height: 3px; background: linear-gradient(90deg, var(--hot), var(--pink-dk)); border-radius: 3px; margin: 0 auto 16px; }
+  .sh-desc { font-size: 14px; color: var(--muted); max-width: 480px; margin: 0 auto; line-height: 1.7; }
+
+  /* PRODUCT GRID */
+  .product-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; padding: 0 48px 72px; }
+  .pc {
+    background: white; border-radius: 20px; overflow: hidden;
+    border: 1px solid #f5d0e0; transition: transform .25s, box-shadow .25s;
+  }
+  .pc:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(232,53,122,0.14); }
+  .pc-thumb { aspect-ratio: 3/4; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .pc-badge { position: absolute; top: 12px; left: 12px; font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; }
+  .b-new { background: var(--pink); color: white; }
+  .b-hot { background: var(--pink-dk); color: white; }
+  .b-sale { background: #e84000; color: white; }
+  .b-sp  { background: var(--gold); color: #5a3800; }
+  .pc-body { padding: 18px 18px 20px; }
+  .pc-name { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--pink-dk); margin-bottom: 3px; }
+  .pc-sub { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
+  .pc-foot { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f5e0ea; padding-top: 12px; }
+  .pc-price { font-size: 22px; font-weight: 800; color: var(--pink); }
+  .pc-price-old { font-size: 12px; color: var(--muted); text-decoration: line-through; display: block; }
+  .pc-sizes { font-size: 11px; font-weight: 600; color: var(--muted); }
+  .swatches { display: flex; gap: 5px; }
+  .sw { width: 14px; height: 14px; border-radius: 50%; border: 1.5px solid rgba(0,0,0,0.1); }
+
+  /* BANNER QUOTE */
+  .bq {
+    margin: 0 48px 72px; padding: 52px 64px;
+    background: linear-gradient(140deg, #fce0ec, #fde8f0);
+    border: 1px solid #f5c0d8; border-radius: 24px;
+    display: flex; align-items: center; justify-content: space-between; gap: 48px;
+  }
+  .bq-left { flex: 1; }
+  .bq-quote {
+    font-family: 'Playfair Display', serif; font-size: 26px; font-style: italic;
+    color: var(--pink-dk); line-height: 1.35; margin-bottom: 16px;
+  }
+  .bq-quote::before { content: '"'; color: var(--pink); font-size: 52px; line-height: 0; vertical-align: -18px; margin-right: 4px; }
+  .bq-attr { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+  .bq-right { text-align: center; flex-shrink: 0; }
+  .bq-big { font-family: 'Playfair Display', serif; font-size: 52px; color: var(--pink); line-height: 1; }
+  .bq-lbl { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px; }
+
+  /* LOOKBOOK */
+  .lb-grid {
+    display: grid; grid-template-columns: 1.4fr 1fr 1fr; grid-template-rows: 1fr 1fr;
+    gap: 12px; padding: 0 48px 72px; min-height: 520px;
+  }
+  .lb-item {
+    border-radius: 18px; overflow: hidden; position: relative;
+    display: flex; flex-direction: column; justify-content: flex-end; padding: 20px;
+    transition: transform .22s;
+  }
+  .lb-item:hover { transform: scale(1.015); }
+  .lb-item:first-child { grid-row: 1/3; background: linear-gradient(160deg, #e8b0c8, #c87898); }
+  .lb-item:nth-child(2) { background: linear-gradient(160deg, #e0b8d0, #c090a8); }
+  .lb-item:nth-child(3) { background: linear-gradient(160deg, #d0b8e8, #a880c0); }
+  .lb-item:nth-child(4) { background: linear-gradient(160deg, #f0c0d8, #d888a8); }
+  .lb-item:nth-child(5) { background: linear-gradient(160deg, #c8d8e8, #90b0d0); }
+  .lb-badge {
+    position: absolute; top: 14px; left: 14px;
+    background: white; color: var(--pink-dk);
+    font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 20px;
+  }
+  .lb-name { font-family: 'Playfair Display', serif; font-size: 17px; font-style: italic; color: white; margin-bottom: 3px; text-shadow: 0 2px 8px rgba(0,0,0,0.18); }
+  .lb-price { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.85); }
+
+  /* SOBRE */
+  .sobre {
+    display: grid; grid-template-columns: 1fr 1fr; margin: 0 48px 72px;
+    border-radius: 24px; overflow: hidden; border: 1px solid #f5c0d8;
+  }
+  .sob-left {
+    background: linear-gradient(145deg, var(--pink-dk), #6a0f30);
+    padding: 60px 52px; display: flex; flex-direction: column; justify-content: center;
+  }
+  .sob-eye { font-size: 10px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+  .sob-title { font-family: 'Playfair Display', serif; font-size: 34px; color: white; line-height: 1.2; margin-bottom: 16px; }
+  .sob-title em { font-style: italic; color: #f9b8d0; }
+  .sob-text { font-size: 14px; color: rgba(255,255,255,0.68); line-height: 1.8; margin-bottom: 28px; }
+  .sob-info { display: flex; flex-direction: column; gap: 10px; }
+  .sob-info-item { display: flex; align-items: center; gap: 10px; font-size: 13px; color: rgba(255,255,255,0.82); font-weight: 600; }
+  .sob-right { background: var(--pink-lt); padding: 60px 52px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-content: center; }
+  .sob-stat { background: white; border-radius: 16px; padding: 22px 18px; text-align: center; border: 1px solid #f5d0e0; }
+  .sob-stat-n { font-family: 'Playfair Display', serif; font-size: 30px; color: var(--pink); margin-bottom: 5px; }
+  .sob-stat-l { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; line-height: 1.4; }
+
+  /* NEWSLETTER */
+  .nl {
+    text-align: center; padding: 72px 48px;
+    background: linear-gradient(135deg, var(--hot), var(--pink-dk));
+  }
+  .nl-icon { font-size: 40px; margin-bottom: 16px; }
+  .nl-title { font-family: 'Playfair Display', serif; font-size: 32px; color: white; margin-bottom: 10px; font-style: italic; }
+  .nl-sub { font-size: 14px; color: rgba(255,255,255,0.72); margin-bottom: 36px; font-weight: 600; }
+  .nl-form { display: flex; max-width: 440px; margin: 0 auto; }
+  .nl-input {
+    flex: 1; padding: 14px 22px; border: none; border-radius: 40px 0 0 40px;
+    background: rgba(255,255,255,0.94); font-family: 'Nunito', sans-serif; font-size: 14px;
+    color: var(--pink-dk); outline: none;
+  }
+  .nl-input::placeholder { color: var(--muted); }
+  .nl-btn {
+    padding: 14px 24px; background: var(--pink-dk); color: white; border: none;
+    border-radius: 0 40px 40px 0; font-family: 'Nunito', sans-serif; font-size: 11px;
+    font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer;
+    transition: background .2s;
+  }
+  .nl-btn:hover { background: #6a0f30; }
+
+  /* FOOTER */
+  footer { background: #2d1020; padding: 56px 72px 0; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 56px; }
+  .ft-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .ft-icon { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--hot), var(--pink-dk)); display: flex; align-items: center; justify-content: center; font-size: 22px; }
+  .ft-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-style: italic; color: #f9b8d0; }
+  .ft-desc { font-size: 13px; color: rgba(255,255,255,0.42); line-height: 1.8; margin-bottom: 20px; }
+  .ft-social { display: flex; gap: 10px; }
+  .ft-social a {
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.55); font-size: 11px; font-weight: 700;
+    padding: 6px 14px; border-radius: 20px; text-decoration: none; transition: all .2s;
+  }
+  .ft-social a:hover { background: var(--pink); color: white; border-color: var(--pink); }
+  .ft-col-title { font-size: 10px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pink); margin-bottom: 20px; }
+  .ft-links { list-style: none; }
+  .ft-links li { margin-bottom: 12px; }
+  .ft-links a { font-size: 13px; color: rgba(255,255,255,0.42); text-decoration: none; transition: color .2s; }
+  .ft-links a:hover { color: #f9b8d0; }
+  .ft-bottom {
+    grid-column: 1/-1; border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 40px; padding: 20px 0;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .ft-copy { font-size: 12px; color: rgba(255,255,255,0.28); }
+
+  /* ANIMS */
+  @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+  .hero-tag   { animation: fadeUp .5s ease both; }
+  .hero-title { animation: fadeUp .5s .1s ease both; }
+  .hero-slogan{ animation: fadeUp .5s .2s ease both; }
+  .hero-btns  { animation: fadeUp .5s .3s ease both; }
+  .hero-stats { animation: fadeUp .5s .4s ease both; }
+
+  @media (max-width: 900px) {
+    nav { padding: 0 20px; } .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; } .hero-right { display: none; }
+    .hero-left { padding: 52px 28px; }
+    .product-grid { grid-template-columns: 1fr 1fr; padding: 0 20px 52px; gap: 14px; }
+    .lb-grid { grid-template-columns: 1fr 1fr; padding: 0 20px 52px; }
+    .lb-item:first-child { grid-row: auto; grid-column: 1/3; }
+    .bq { flex-direction: column; margin: 0 20px 52px; padding: 40px 28px; }
+    .sobre { grid-template-columns: 1fr; margin: 0 20px 52px; }
+    .sob-right { grid-template-columns: 1fr 1fr; padding: 40px 28px; }
+    footer { grid-template-columns: 1fr; padding: 40px 28px 0; }
+    .sh { padding: 52px 24px 36px; }
+    .strip-item { padding: 12px 18px; font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">
+    <div class="nav-icon">🦋</div>
+    <div class="nav-name"><b>Boutique</b> Luz de Luisa</div>
+  </div>
+  <div class="nav-links">
+    <a href="#novidades">Novidades</a>
+    <a href="#colecao">Coleção</a>
+    <a href="#lookbook">Lookbook</a>
+    <a href="#sobre">Sobre</a>
+    <a href="https://boutiqueluzdeluisa.com.br" class="nav-cta">Comprar Online</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="deco d1"></div><div class="deco d2"></div>
+    <div class="deco d3"></div><div class="deco d4"></div>
+    <div class="hero-tag">🦋 Nova Coleção · 2025</div>
+    <h1 class="hero-title">
+      Você fica linda<br>
+      <em>vestida de<br>amor próprio!</em>
+    </h1>
+    <p class="hero-slogan">
+      Loja virtual e física em Contagem/MG.<br>
+      <b>Peças para a mulher que brilha do jeito dela.</b>
+    </p>
+    <div class="hero-btns">
+      <a href="#colecao" class="btn-primary">✨ Ver Coleção</a>
+      <a href="https://boutiqueluzdeluisa.com.br" class="btn-outline">Comprar Online</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="hs-num">305</div><div class="hs-label">Posts</div></div>
+      <div><div class="hs-num">3.380</div><div class="hs-label">Seguidoras</div></div>
+      <div><div class="hs-num">💗</div><div class="hs-label">Com amor</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-card">
+      <div class="hc-emoji">👗</div>
+      <div class="hc-badge">🆕 Novo</div>
+      <div class="hc-name">Cropped Dakota</div>
+      <div class="hc-sub">O cropped que vai dominar seus looks</div>
+    </div>
+    <div class="hero-card">
+      <div class="hc-emoji">🦋</div>
+      <div class="hc-badge">❤️ Quente</div>
+      <div class="hc-name">Cropped Ariana</div>
+      <div class="hc-sub">Estilo + conforto + você</div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-item">🚚 Frete grátis acima de R$250</div>
+  <div class="strip-item">🔄 Troca em 7 dias</div>
+  <div class="strip-item">📱 Compre pelo site</div>
+  <div class="strip-item">📍 Rua Rio Poti 421 · Contagem/MG</div>
+</div>
+
+<section id="novidades">
+  <div class="sh">
+    <div class="sh-eye">✨ Chegou agora</div>
+    <h2 class="sh-title">Novidades <em>da Semana</em></h2>
+    <div class="sh-rule"></div>
+    <p class="sh-desc">Peças fresquinhas selecionadas com muito carinho para você arrasar!</p>
+  </div>
+  <div class="product-grid" id="colecao">
+
+    <div class="pc">
+      <div class="pc-thumb" style="background:linear-gradient(160deg,#f0e8d8,#ddd0b8);">
+        <span class="pc-badge b-new">🆕 Novo</span>
+        <svg width="100" height="130" viewBox="0 0 100 130" fill="none">
+          <path d="M12 28 L36 10 L50 18 L64 10 L88 28 L74 54 L62 40 L62 80 L38 80 L38 40 L26 54 Z" fill="#c8a870"/>
+          <path d="M36 10 L50 18 L64 10" fill="none" stroke="#a08040" stroke-width="1.2"/>
+          <text x="50" y="64" text-anchor="middle" font-size="9" fill="#a08040" font-family="sans-serif" letter-spacing="2">DAKOTA</text>
+        </svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Cropped Dakota</div>
+        <div class="pc-sub">Tops · Casual &amp; Estilo</div>
+        <div class="pc-foot">
+          <div><div class="pc-price">R$ 89</div><div class="pc-sizes">P · M · G · GG</div></div>
+          <div class="swatches">
+            <div class="sw" style="background:#2c2c2c;"></div>
+            <div class="sw" style="background:#6b3a2a;"></div>
+            <div class="sw" style="background:#f0ece4;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc">
+      <div class="pc-thumb" style="background:linear-gradient(160deg,#f8dce8,#edbed4);">
+        <span class="pc-badge b-hot">❤️ Quente</span>
+        <svg width="90" height="120" viewBox="0 0 90 120" fill="none">
+          <path d="M10 30 Q10 10 20 8 L36 20 L45 16 L54 20 L70 8 Q80 10 80 30 L72 50 Q60 36 60 50 L60 92 L30 92 L30 50 Q30 36 18 50 Z" fill="#d87aa8"/>
+          <text x="45" y="74" text-anchor="middle" font-size="9" fill="#b85888" font-family="sans-serif" letter-spacing="1">ARIANA</text>
+        </svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Cropped Ariana</div>
+        <div class="pc-sub">Tops · Feminino &amp; Delicado</div>
+        <div class="pc-foot">
+          <div><div class="pc-price">R$ 79</div><div class="pc-sizes">P · M · G</div></div>
+          <div class="swatches">
+            <div class="sw" style="background:#d87aa8;"></div>
+            <div class="sw" style="background:#1a1a1a;"></div>
+            <div class="sw" style="background:#8b0000;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc">
+      <div class="pc-thumb" style="background:linear-gradient(160deg,#e8d0d8,#c8a0b0);">
+        <span class="pc-badge b-new">🆕 Novo</span>
+        <svg width="96" height="126" viewBox="0 0 96 126" fill="none">
+          <path d="M10 26 L30 8 L48 16 L66 8 L86 26 L72 52 L60 38 L60 118 L36 118 L36 38 L24 52 Z" fill="#8b0000"/>
+          <path d="M30 8 L48 16 L66 8" fill="none" stroke="#600000" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Blusa Manga Longa Vinho</div>
+        <div class="pc-sub">Tops · Inverno</div>
+        <div class="pc-foot">
+          <div><div class="pc-price">R$ 99</div><div class="pc-sizes">P · M · G · GG</div></div>
+          <div class="swatches">
+            <div class="sw" style="background:#8b0000;"></div>
+            <div class="sw" style="background:#1a1a1a;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc">
+      <div class="pc-thumb" style="background:linear-gradient(160deg,#e0e0e0,#c0c0c0);">
+        <span class="pc-badge b-hot">🔥 Favorito</span>
+        <svg width="78" height="126" viewBox="0 0 78 126" fill="none">
+          <path d="M8 4 L70 4 L70 8 L58 118 L42 118 L39 72 L36 118 L20 118 L8 8 Z" fill="#1a1a1a"/>
+          <line x1="39" y1="8" x2="39" y2="72" stroke="#333" stroke-width="0.8" stroke-dasharray="4,3"/>
+          <line x1="8" y1="8" x2="70" y2="8" stroke="#333" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Calça Preta Slim</div>
+        <div class="pc-sub">Bottoms · Dia a Dia</div>
+        <div class="pc-foot">
+          <div><div class="pc-price">R$ 139</div><div class="pc-sizes">36 · 38 · 40 · 42 · 44</div></div>
+          <div class="swatches"><div class="sw" style="background:#1a1a1a;"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc">
+      <div class="pc-thumb" style="background:linear-gradient(160deg,#e8daf4,#ccb0e4);">
+        <span class="pc-badge b-new">✨ Novo</span>
+        <svg width="84" height="128" viewBox="0 0 84 128" fill="none">
+          <rect x="8" y="4" width="68" height="120" rx="6" fill="#b888d8"/>
+          <line x1="8" y1="44" x2="76" y2="44" stroke="#8858b8" stroke-width="0.8"/>
+          <rect x="22" y="16" width="40" height="3" rx="1.5" fill="#8858b8"/>
+        </svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Vestido Midi Lilás</div>
+        <div class="pc-sub">Vestidos · Festa &amp; Passeio</div>
+        <div class="pc-foot">
+          <div><div class="pc-price">R$ 189</div><div class="pc-sizes">P · M · G · GG</div></div>
+          <div class="swatches">
+            <div class="sw" style="background:#b888d8;"></div>
+            <div class="sw" style="background:#1a1a1a;"></div>
+            <div class="sw" style="background:#e8b0a0;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc">
+      <div class="pc-thumb" style="background:linear-gradient(160deg,#fce8f0,#f8c0da);">
+        <span class="pc-badge b-sp">🎁 Presente</span>
+        <svg width="110" height="80" viewBox="0 0 110 80" fill="none">
+          <rect x="6" y="8" width="98" height="64" rx="10" fill="#e8357a"/>
+          <rect x="16" y="18" width="78" height="44" rx="6" fill="rgba(255,255,255,0.15)"/>
+          <text x="55" y="34" text-anchor="middle" font-size="8" fill="white" font-family="sans-serif" letter-spacing="2" font-weight="bold">BOUTIQUE</text>
+          <text x="55" y="48" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.8)" font-family="sans-serif">Luz de Luisa</text>
+          <text x="55" y="64" text-anchor="middle" font-size="16" fill="white">🦋</text>
+        </svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-name">Vale Presente</div>
+        <div class="pc-sub">Presentes · Para Dar ou Receber</div>
+        <div class="pc-foot">
+          <div><div class="pc-price">A partir de R$ 50</div><div class="pc-sizes">Qualquer valor</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="bq">
+  <div class="bq-left">
+    <div class="bq-quote">Se acostume com a ideia de viver coisas boas, pois é isso que você merece!</div>
+    <div class="bq-attr">— Boutique Luz de Luisa · @boutique.luzdeluisa ⭐⭐⭐</div>
+  </div>
+  <div class="bq-right">
+    <div class="bq-big">3.380</div>
+    <div class="bq-lbl">Mulheres que brilham</div>
+    <a href="https://instagram.com/boutique.luzdeluisa" class="btn-primary" style="font-size:11px;">Seguir no Instagram</a>
+  </div>
+</div>
+
+<section id="lookbook">
+  <div class="sh">
+    <div class="sh-eye">🦋 Inspiração</div>
+    <h2 class="sh-title">Looks <em>Favoritos</em></h2>
+    <div class="sh-rule"></div>
+    <p class="sh-desc">Do provador para o mundo — veja como combinar suas peças e arrasar!</p>
+  </div>
+  <div class="lb-grid">
+    <div class="lb-item">
+      <div class="lb-badge">Look Principal</div>
+      <div class="lb-name">Look Dia a Dia</div>
+      <div class="lb-price">Cropped Dakota + Calça Preta</div>
+    </div>
+    <div class="lb-item">
+      <div class="lb-badge">Noite</div>
+      <div class="lb-name">Look Noite</div>
+      <div class="lb-price">Vestido Midi + Acessórios</div>
+    </div>
+    <div class="lb-item">
+      <div class="lb-badge">Trabalho</div>
+      <div class="lb-name">Look Trabalho</div>
+      <div class="lb-price">Blusa Vinho + Calça Slim</div>
+    </div>
+    <div class="lb-item">
+      <div class="lb-badge">Casual</div>
+      <div class="lb-name">Look Casual</div>
+      <div class="lb-price">Cropped Ariana + Jeans</div>
+    </div>
+    <div class="lb-item">
+      <div class="lb-badge">Presente</div>
+      <div class="lb-name">Para Presentear</div>
+      <div class="lb-price">Vale Presente Boutique 🦋</div>
+    </div>
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="sh">
+    <div class="sh-eye">🌸 Nossa história</div>
+    <h2 class="sh-title">Sobre a <em>Boutique</em></h2>
+    <div class="sh-rule"></div>
+  </div>
+  <div class="sobre">
+    <div class="sob-left">
+      <div class="sob-eye">Boutique Luz de Luisa</div>
+      <h3 class="sob-title">Feita para a mulher <em>que você é</em></h3>
+      <p class="sob-text">A Boutique Luz de Luisa nasceu com um propósito: ajudar cada mulher a se sentir linda, confiante e vestida de amor próprio. Com loja virtual e física em Contagem, MG, estamos aqui para você a cada passo da jornada!</p>
+      <div class="sob-info">
+        <div class="sob-info-item">📍 Rua Rio Poti 421, Novo Riacho · Contagem/MG</div>
+        <div class="sob-info-item">🌐 boutiqueluzdeluisa.com.br</div>
+        <div class="sob-info-item">📸 @boutique.luzdeluisa</div>
+      </div>
+    </div>
+    <div class="sob-right">
+      <div class="sob-stat"><div class="sob-stat-n">305</div><div class="sob-stat-l">Posts no Instagram</div></div>
+      <div class="sob-stat"><div class="sob-stat-n">3.380</div><div class="sob-stat-l">Seguidoras</div></div>
+      <div class="sob-stat"><div class="sob-stat-n">🦋</div><div class="sob-stat-l">Loja virtual e física</div></div>
+      <div class="sob-stat"><div class="sob-stat-n">7d</div><div class="sob-stat-l">Troca garantida</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="nl">
+  <div class="nl-icon">🦋</div>
+  <h2 class="nl-title">Receba as novidades em primeira mão</h2>
+  <p class="nl-sub">Cadastre seu e-mail e fique por dentro dos lançamentos e promoções!</p>
+  <div class="nl-form">
+    <input class="nl-input" type="email" placeholder="seu@email.com.br">
+    <button class="nl-btn">Quero receber ✨</button>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="ft-brand">
+      <div class="ft-icon">🦋</div>
+      <div class="ft-logo">Boutique Luz de Luisa</div>
+    </div>
+    <p class="ft-desc">Você fica linda vestida de amor próprio! ✨<br>Loja virtual e física em Contagem, Minas Gerais.</p>
+    <div class="ft-social">
+      <a href="https://instagram.com/boutique.luzdeluisa">Instagram</a>
+      <a href="https://boutiqueluzdeluisa.com.br">Site</a>
+      <a href="#">WhatsApp</a>
+    </div>
+  </div>
+  <div>
+    <div class="ft-col-title">Navegação</div>
+    <ul class="ft-links">
+      <li><a href="#novidades">Novidades</a></li>
+      <li><a href="#colecao">Coleção</a></li>
+      <li><a href="#lookbook">Lookbook</a></li>
+      <li><a href="#sobre">Sobre a loja</a></li>
+    </ul>
+  </div>
+  <div>
+    <div class="ft-col-title">Atendimento</div>
+    <ul class="ft-links">
+      <li><a href="#">WhatsApp</a></li>
+      <li><a href="#">Instagram DM</a></li>
+      <li><a href="#">Política de troca</a></li>
+      <li><a href="#">Frete e entrega</a></li>
+      <li><a href="https://boutiqueluzdeluisa.com.br">boutiqueluzdeluisa.com.br</a></li>
+    </ul>
+  </div>
+  <div class="ft-bottom">
+    <div class="ft-copy">© 2025 Boutique Luz de Luisa · Todos os direitos reservados</div>
+    <div class="ft-copy">Feito com 🦋 e muito amor</div>
+  </div>
+</footer>
+
+</body>
+</html>
