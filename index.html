@@ -223,6 +223,22 @@
   .sob-stat-n { font-family: 'Playfair Display', serif; font-size: 30px; color: var(--pink); margin-bottom: 5px; }
   .sob-stat-l { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; line-height: 1.4; }
 
+  /* DEPOIMENTOS */
+  .dep { padding: 0 48px 72px; }
+  .dep-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+  .dep-card {
+    background: white; border-radius: 20px; padding: 28px 24px;
+    border: 1px solid #f5d0e0; position: relative;
+  }
+  .dep-stars { color: var(--gold); font-size: 14px; margin-bottom: 12px; }
+  .dep-text { font-size: 14px; color: var(--text); line-height: 1.7; margin-bottom: 18px; font-style: italic; }
+  .dep-text::before { content: '"'; color: var(--pink); font-size: 36px; font-family: 'Playfair Display', serif; line-height: 0; vertical-align: -12px; margin-right: 3px; }
+  .dep-author { display: flex; align-items: center; gap: 10px; border-top: 1px solid #f5e0ea; padding-top: 14px; }
+  .dep-avatar { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, var(--hot), var(--pink-dk)); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+  .dep-name { font-size: 13px; font-weight: 700; color: var(--pink-dk); }
+  .dep-via { font-size: 11px; color: var(--muted); }
+  @media (max-width: 900px) { .dep { padding: 0 20px 52px; } .dep-grid { grid-template-columns: 1fr; } }
+
   /* NEWSLETTER */
   .nl {
     text-align: center; padding: 72px 48px;
@@ -566,6 +582,43 @@
       <div class="sob-stat"><div class="sob-stat-n">3.380</div><div class="sob-stat-l">Seguidoras</div></div>
       <div class="sob-stat"><div class="sob-stat-n">🦋</div><div class="sob-stat-l">Loja virtual e física</div></div>
       <div class="sob-stat"><div class="sob-stat-n">7d</div><div class="sob-stat-l">Troca garantida</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="depoimentos">
+  <div class="sh">
+    <div class="sh-eye">💬 O que dizem por aí</div>
+    <h2 class="sh-title">Clientes que <em>amam</em></h2>
+    <div class="sh-rule"></div>
+    <p class="sh-desc">A opinião de quem já comprou e voltou para contar!</p>
+  </div>
+  <div class="dep">
+    <div class="dep-grid">
+      <div class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-text">Amei demais! A peça chegou super rápido e a qualidade é incrível. Com certeza vou comprar mais vezes!</p>
+        <div class="dep-author">
+          <div class="dep-avatar">🦋</div>
+          <div><div class="dep-name">Ana Paula</div><div class="dep-via">via Instagram</div></div>
+        </div>
+      </div>
+      <div class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-text">Atendimento maravilhoso, me ajudaram a escolher o tamanho certo. O vestido ficou perfeito em mim!</p>
+        <div class="dep-author">
+          <div class="dep-avatar">🌸</div>
+          <div><div class="dep-name">Fernanda Lima</div><div class="dep-via">via WhatsApp</div></div>
+        </div>
+      </div>
+      <div class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-text">Já é a terceira vez que compro aqui e nunca me decepcionei. Loja top, produtos lindos e preço justo!</p>
+        <div class="dep-author">
+          <div class="dep-avatar">💗</div>
+          <div><div class="dep-name">Juliana Souza</div><div class="dep-via">via Instagram</div></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
